@@ -1,8 +1,19 @@
-import {Entity, model, property, hasMany} from '@loopback/repository';
-import {Proponentexsolicitud} from './proponentexsolicitud.model';
+import {Entity, hasMany, model, property} from '@loopback/repository';
 import {Juradoxsolicitud} from './juradoxsolicitud.model';
+import {Proponentexsolicitud} from './proponentexsolicitud.model';
 
-@model()
+@model({
+  settings: {
+    foreignKeys: {
+      estado_fk: {
+        name: 'fk_estado',
+        entity: 'Estado',
+        entityKey: 'id',
+        foreignKey: 'id_estado'
+      }
+    }
+  }
+})
 export class Solicitud extends Entity {
   @property({
     type: 'number',

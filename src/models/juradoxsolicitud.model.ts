@@ -1,8 +1,25 @@
-import {Entity, model, property, belongsTo} from '@loopback/repository';
-import {Solicitud} from './solicitud.model';
+import {belongsTo, Entity, model, property} from '@loopback/repository';
 import {Jurado} from './jurado.model';
+import {Solicitud} from './solicitud.model';
 
-@model()
+@model({
+  settings: {
+    foreignKeys: {
+      solicitud_fk: {
+        name: 'fk_solicitud',
+        entity: 'Solicitud',
+        entityKey: 'id',
+        foreignKey: 'id_solicitud'
+      },
+      jurado_fk: {
+        name: 'fk_jurado',
+        entity: 'Jurado',
+        entityKey: 'id',
+        foreignKey: 'id_jurado'
+      }
+    }
+  }
+})
 export class Juradoxsolicitud extends Entity {
   @property({
     type: 'number',
