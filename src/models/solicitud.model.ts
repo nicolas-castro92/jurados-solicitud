@@ -1,4 +1,6 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Proponentexsolicitud} from './proponentexsolicitud.model';
+import {Juradoxsolicitud} from './juradoxsolicitud.model';
 
 @model()
 export class Solicitud extends Entity {
@@ -26,6 +28,16 @@ export class Solicitud extends Entity {
   })
   descripcion: string;
 
+  @hasMany(() => Proponentexsolicitud, {keyTo: 'id_solicitud'})
+  proponentexsolicituds: Proponentexsolicitud[];
+
+  @property({
+    type: 'number',
+  })
+  id_estado?: number;
+
+  @hasMany(() => Juradoxsolicitud, {keyTo: 'id_solicitud'})
+  juradoxsolicituds: Juradoxsolicitud[];
 
   constructor(data?: Partial<Solicitud>) {
     super(data);
