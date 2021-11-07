@@ -4,3 +4,4 @@ export * from './jurado.repository';
 export * from './juradoxsolicitud.repository';
 export * from './proponentexsolicitud.repository';
 export * from './solicitud.repository';
+export * from './usuariojurado.repository';

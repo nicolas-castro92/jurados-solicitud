@@ -14,3 +14,4 @@ export * from './solicitud.controller';
 export * from './estado.controller';
 export * from './juradoxsolicitud.controller';
 export * from './jurado.controller';
+export * from './jurado-usuariojurado.controller';
