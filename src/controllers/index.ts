@@ -9,3 +9,8 @@ export * from './solicitud-juradoxsolicitud.controller';
 export * from './juradoxsolicitud-solicitud.controller';
 export * from './jurado-juradoxsolicitud.controller';
 export * from './juradoxsolicitud-jurado.controller';
+export * from './proponentexsolicitud.controller';
+export * from './solicitud.controller';
+export * from './estado.controller';
+export * from './juradoxsolicitud.controller';
+export * from './jurado.controller';
